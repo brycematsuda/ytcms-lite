@@ -1,0 +1,5 @@
+== ytcms-lite
+
+A simple CMS for managing content on YouTube using sqlite3.
+
+More details to follow...
