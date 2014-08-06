@@ -101,6 +101,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jdbc-sqlite3
   jquery-rails
   rails (= 4.1.4)
   sdoc (~> 0.4.0)
