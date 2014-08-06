@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806010741) do
+ActiveRecord::Schema.define(version: 20140806023539) do
 
   create_table "admins", force: true do |t|
     t.string   "email",           limit: 100, default: "", null: false
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20140806010741) do
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email"
+
+  create_table "admins_seasons", id: false, force: true do |t|
+    t.integer "admin_id"
+    t.integer "season_id"
+  end
+
+  add_index "admins_seasons", ["admin_id", "season_id"], name: "index_admins_seasons_on_admin_id_and_season_id"
 
   create_table "episodes", force: true do |t|
     t.integer  "season_id"

@@ -1,0 +1,31 @@
+<h2>Listing seasons</h2>
+
+<%= link_to 'Add New Season', new_season_path, :class => 'new' %>
+
+<table class="listing">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Show</th>
+      <th>Name</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seasons.each do |season| %>
+      <tr>
+        <td><%= season.position %></td>
+        <td><%= season.show.name if season.show %></td>
+        <td><%= season.name %></td>
+        <td><%= season.permalink %></td>
+        <td><%= season.visible ? "Yes" : "No" %></td>
+        <!--<td><%= link_to 'Show', season %></td>-->
+        <td><%= link_to 'Edit', edit_season_path(season) %>
+            <%= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

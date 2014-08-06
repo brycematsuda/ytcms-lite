@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YtcmsLite</title>
+  <title>YouTube CMS Lite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="header">
+  <h1>YouTube CMS Lite</h1>
+  </div>
+  <div id="main">
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

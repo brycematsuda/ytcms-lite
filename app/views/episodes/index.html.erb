@@ -1,0 +1,33 @@
+<h2>Listing episodes</h2>
+
+<%= link_to 'Add New Episode', new_episode_path, :class => 'new' %>
+
+<table class="listing">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Season</th>
+      <th>Name</th>
+      <th>Visible</th>
+      <th>Content Type</th>
+      <th>Description</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @episodes.each do |episode| %>
+      <tr>
+        <td><%= episode.position %></td>
+        <td><%= episode.season.name if episode.season %></td>
+        <td><%= episode.name %></td>
+        <td><%= episode.visible ? "Yes" : "No" %></td>
+        <td><%= episode.content_type %></td>
+        <td><%= truncate(episode.description, length: 17) %></td>
+<!--         <td><%= link_to 'Show', episode %></td> -->
+        <td><%= link_to 'Edit', edit_episode_path(episode) %>
+            <%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
