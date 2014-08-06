@@ -3,6 +3,13 @@ require 'test_helper'
 class SeasonsControllerTest < ActionController::TestCase
   setup do
     @season = seasons(:one)
+    @update = {
+      :name => "Season Two",
+      :permalink => "season2",
+      :position => 2,
+      :show_id => 1,
+      :visible => false
+    }
   end
 
   test "should get index" do
@@ -18,7 +25,7 @@ class SeasonsControllerTest < ActionController::TestCase
 
   test "should create season" do
     assert_difference('Season.count') do
-      post :create, season: { name: @season.name, permalink: @season.permalink, position: @season.position, show_id: @season.show_id, visible: @season.visible }
+      post :create, season: @update
     end
 
     assert_redirected_to season_path(assigns(:season))
@@ -35,7 +42,7 @@ class SeasonsControllerTest < ActionController::TestCase
   end
 
   test "should update season" do
-    patch :update, id: @season, season: { name: @season.name, permalink: @season.permalink, position: @season.position, show_id: @season.show_id, visible: @season.visible }
+    patch :update, id: @season, season: @update
     assert_redirected_to season_path(assigns(:season))
   end
 

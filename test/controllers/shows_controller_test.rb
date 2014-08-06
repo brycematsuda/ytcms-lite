@@ -3,6 +3,11 @@ require 'test_helper'
 class ShowsControllerTest < ActionController::TestCase
   setup do
     @show = shows(:one)
+    @update = {
+      :name => 'Show Two',
+      :position => 2,
+      :visible => true
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class ShowsControllerTest < ActionController::TestCase
 
   test "should create show" do
     assert_difference('Show.count') do
-      post :create, show: { position: @show.position, string: @show.string, visible: @show.visible }
+      post :create, show: @update
     end
 
     assert_redirected_to show_path(assigns(:show))
@@ -35,7 +40,7 @@ class ShowsControllerTest < ActionController::TestCase
   end
 
   test "should update show" do
-    patch :update, id: @show, show: { position: @show.position, string: @show.string, visible: @show.visible }
+    patch :update, id: @show, show: @update
     assert_redirected_to show_path(assigns(:show))
   end
 

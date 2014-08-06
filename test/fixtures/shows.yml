@@ -2,3 +2,8 @@
 
 already_taken:
   name: "The Already Been Taken Show"
+
+one:
+  name: "One True Show"
+  position: 1
+  visible: false
