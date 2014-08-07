@@ -2,7 +2,12 @@ require 'test_helper'
 
 class AdminsControllerTest < ActionController::TestCase
   setup do
+    login_as(:admin)
     @admin = admins(:one)
+    @update = {
+     :email => 'update@example.com',
+     :password => 'example'
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class AdminsControllerTest < ActionController::TestCase
 
   test "should create admin" do
     assert_difference('Admin.count') do
-      post :create, admin: { email: @admin.email, password: @admin.password }
+      post :create, admin: @update
     end
 
     assert_redirected_to admin_path(assigns(:admin))
@@ -35,7 +40,7 @@ class AdminsControllerTest < ActionController::TestCase
   end
 
   test "should update admin" do
-    patch :update, id: @admin, admin: { email: @admin.email, password: @admin.password }
+    patch :update, id: @admin, admin: @update
     assert_redirected_to admin_path(assigns(:admin))
   end
 

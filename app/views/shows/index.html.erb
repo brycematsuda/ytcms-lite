@@ -21,7 +21,7 @@
         <td><%= show.visible ? "Yes" : "No" %></td>
         <td><!--<%= link_to 'Show', show %>-->
             <%= link_to 'Edit', edit_show_path(show) %>
-            <%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <%= link_to 'Destroy', show, method: :destroy, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

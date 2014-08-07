@@ -6,3 +6,7 @@ not_unique:
 admin:
   email: testadmin@example.com
   password_digest: $2a$10$LDPsLM28CZrAH9VK.iCXE.YJA2tkrZ7BL23MdPROdr.p/sQWubXES
+
+one:
+  email: one@example.com
+  password_digest: $2a$10$LDPsLM28CZrAH9VK.iCXE.YJA2tkrZ7BL23MdPROdr.p/sQWubXES

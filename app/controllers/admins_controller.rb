@@ -40,7 +40,7 @@ class AdminsController < ApplicationController
   end
 
   # DELETE /admins/1
-  def delete
+  def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy
     redirect_to admins_url, notice: 'Admin was successfully destroyed.'
