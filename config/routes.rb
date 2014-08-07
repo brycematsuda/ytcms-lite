@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :episodes
   resources :seasons
   resources :shows
+  resources :admins
 
-  match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
+  match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

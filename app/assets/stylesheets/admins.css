@@ -2,6 +2,6 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-table#shows.listing{
-  width: 500px;
+table#admins.listing{
+  width: 400px;
 }

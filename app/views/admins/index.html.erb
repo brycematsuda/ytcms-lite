@@ -1,0 +1,25 @@
+<h2>Listing admins</h2>
+
+<%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
+<%= link_to 'Add New Admin', new_admin_path, :class => 'new' %>
+
+<table id="admins" class="listing">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+        <td><%= truncate(admin.email, length: 20) %></td>
+        <td>
+            <%= link_to 'Edit', edit_admin_path(admin) %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => admin.id}, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
