@@ -6,3 +6,10 @@ one:
   position: 1
   visible: false
   permalink: "season1"
+
+not_unique:
+  name: "A Season Without A Unique Permalink"
+  show_id: 1
+  position: 1
+  visible: false
+  permalink: "notunique"

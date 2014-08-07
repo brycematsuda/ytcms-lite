@@ -8,3 +8,8 @@ one:
   content_type: HTML
   content: "The Phantom Menace"
   description: "A long long time ago, in a galaxy far away..."
+
+no_content:
+  name: "No Content"
+  visible: false
+  description: "No content here!"
