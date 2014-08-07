@@ -1,0 +1,13 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.menu ul li {
+  list-style: none;
+  width: 15%;
+  margin-top: 14px;
+}
+
+.identity {
+  text-align: center;
+}

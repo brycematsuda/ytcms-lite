@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SeasonsControllerTest < ActionController::TestCase
   setup do
+    login_as(:admin)
     @season = seasons(:one)
     @update = {
       :name => "Season Two",

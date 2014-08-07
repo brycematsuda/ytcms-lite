@@ -29,7 +29,8 @@
   </div>
   <div class="field">
     <%= f.label :content_type %><br>
-    <%= f.select(:content_type, ['text', 'HTML']) %>
+    <%= f.radio_button(:content_type,'text') %> Text &nbsp;
+    <%= f.radio_button(:content_type,'HTML') %> HTML
   </div>
   <div class="field">
     <%= f.label :content %><br>

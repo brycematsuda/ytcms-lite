@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ShowsControllerTest < ActionController::TestCase
   setup do
+    login_as(:admin)
     @show = shows(:one)
     @update = {
       :name => 'Show Two',

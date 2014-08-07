@@ -60,7 +60,7 @@ h2 {
 }
 
 #content a.new {
-  margin-left: 14em;
+  margin-left: 8.3em;
 }
 
 #info{
@@ -103,4 +103,15 @@ form {
   margin: 0 auto;
   padding: 0 auto;
   width: 14%;
+}
+
+.notice {
+  text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  background-color: #33cc33;
+  margin-bottom: 7px;
+  width: 30%;
+  font-size: 14px;
+  font-weight: bold;
 }

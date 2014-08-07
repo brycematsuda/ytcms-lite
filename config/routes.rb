@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+ 
+  get 'admin', :to => 'access#index'
+  
   resources :episodes
   resources :seasons
   resources :shows
 
-  get ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,7 @@ require 'test_helper'
 
 class EpisodesControllerTest < ActionController::TestCase
   setup do
+    login_as(:admin)
     @episode = episodes(:one)
   end
 

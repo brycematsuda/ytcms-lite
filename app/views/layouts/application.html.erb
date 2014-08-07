@@ -11,6 +11,11 @@
   <h1>YouTube CMS Lite</h1>
   </div>
   <div id="main">
+  <% if !flash[:notice].blank? %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+    <% end %>
     <div id="content">
       <%= yield %>
     </div>
