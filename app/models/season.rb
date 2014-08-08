@@ -3,9 +3,8 @@ class Season < ActiveRecord::Base
   has_and_belongs_to_many :editors, :class_name => "Admin"
   has_many :episodes
   
-  validates :name, :presence => true, :uniqueness => true
-  validates :permalink, :presence => true, :uniqueness => true
-  validates :show_id, :presence => true
+  validates :name, :presence => true, :uniqueness => true, length: { in: 5..100 }
+  validates :permalink, :presence => true, :uniqueness => true, length: { in: 5..20 }
 
   scope :visible, lambda { where(:visible => true) }
   scope :invisible, lambda { where(:visible => false) }
