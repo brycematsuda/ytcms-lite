@@ -1,7 +1,9 @@
 class Show < ActiveRecord::Base
 
   has_many :seasons
-  
+
+  acts_as_list
+    
   validates :name, :presence => true, :uniqueness => true, length: { in: 5..100 }
   validates :position, :presence => true, numericality: { only_integer: true, greater_than: 0 }
 

@@ -3,7 +3,7 @@
 
 <div class="season delete">
   <h2>Delete Season</h2>
-  <%= form_for :season, :url => { :action => 'destroy', :id => @season.id, :show_id => @show.id } do |f| %>
+  <%= form_for :season, :url => { :action => 'destroy', :id => @season.id, :show_id => @show.id }, :html => {:class => 'delete'} do |f| %>
     <p id="delete-confirm">Are you sure you want to permanently delete "<%= @season.name %>"?</p>
     <%= submit_tag("Delete Season") %>
   <% end %>

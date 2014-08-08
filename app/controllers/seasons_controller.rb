@@ -30,7 +30,7 @@ class SeasonsController < ApplicationController
     @season = Season.new(season_params)
 
     if @season.save
-      flash[:notice] = "Season was successfully created."
+      flash[:notice] = "\"" + @season.name + "\" was successfully created."
       redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
@@ -42,7 +42,7 @@ class SeasonsController < ApplicationController
   # PATCH/PUT /seasons/1
   def update
     if @season.update(season_params)
-      flash[:notice] = "Season was successfully updated."
+      flash[:notice] = "\"" + @season.name + "\" was successfully updated."
       redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
@@ -58,7 +58,7 @@ class SeasonsController < ApplicationController
   # DELETE /seasons/1
   def destroy
       @season.destroy
-      flash[:notice] = "Season was successfully destroyed."
+      flash[:notice] = "\"" + @season.name + "\" was successfully destroyed."
       redirect_to(:action => 'index', :show_id => @show.id)
   end
 

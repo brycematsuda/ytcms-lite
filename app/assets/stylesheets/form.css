@@ -10,7 +10,7 @@
 }
 
 .delete {
-  width: 33%;
+  width: 100%;
   text-align: center;
 }
 
@@ -22,4 +22,8 @@
 .delete p 
 {
   font-size: 14px;
+}
+
+form.delete {
+  width: 30%
 }

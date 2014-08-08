@@ -18,8 +18,8 @@
     <% @seasons.each do |season| %>
       <tr>
         <td><%= season.position %></td>
-        <td><%= season.name %></td>
-        <td><%= season.permalink %></td>
+        <td><%= truncate(season.name, length: 45) %></td>
+        <td><%= truncate(season.permalink, length: 20) %></td>
         <td><%= season.visible ? "Yes" : "No" %></td>
         <td>
             <%= link_to("View Episodes", {:controller => 'episodes', :season_id => season.id}) %>

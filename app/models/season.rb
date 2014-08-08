@@ -3,6 +3,8 @@ class Season < ActiveRecord::Base
   has_and_belongs_to_many :editors, :class_name => "Admin"
   has_many :episodes
   
+  acts_as_list
+
   validates :name, :presence => true, :uniqueness => true, length: { in: 5..100 }
   validates :permalink, :presence => true, :uniqueness => true, length: { in: 5..20 }
 

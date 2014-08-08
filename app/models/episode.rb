@@ -1,6 +1,8 @@
 class Episode < ActiveRecord::Base
   belongs_to :season
 
+  acts_as_list
+  
   validates :name, :presence => true
   validates :content, :presence => true
   

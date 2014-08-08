@@ -43,3 +43,6 @@ gem "jdbc-sqlite3", :platform => :jruby
 
 # Silence asset pipeline logs
 gem 'quiet_assets', group: :development
+
+# Manage lists easier
+gem "acts_as_list", "~> 0.3.0"
