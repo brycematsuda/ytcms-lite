@@ -1,7 +1,7 @@
-<h2>Listing shows</h2>
+<h2>Listing <%= pluralize(@shows.size, 'show') %></h2>
 
 <%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
-<%= link_to 'Add New Show', new_show_path, :class => 'new' %>
+<%= link_to 'Add New Show', {:action => 'new'}, :class => 'new' %>
 
 <table id="shows" class="listing">
   <thead>
@@ -19,9 +19,11 @@
         <td><%= show.position %></td>
         <td><%= show.name %></td>
         <td><%= show.visible ? "Yes" : "No" %></td>
-        <td><!--<%= link_to 'Show', show %>-->
-            <%= link_to 'Edit', edit_show_path(show) %>
-            <%= link_to 'Destroy', show, method: :destroy, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <%= link_to 'View Seasons', {:controller => 'seasons', :show_id => show.id} %>
+            <%= link_to 'Edit', {:action => 'edit', :id => show.id} %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => show.id} %>
+        </td>
       </tr>
     <% end %>
   </tbody>

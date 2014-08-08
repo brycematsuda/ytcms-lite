@@ -2,11 +2,6 @@ Rails.application.routes.draw do
  
   get 'admin', :to => 'access#index'
   
-  resources :episodes
-  resources :seasons
-  resources :shows
-  resources :admins
-
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.

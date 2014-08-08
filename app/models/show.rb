@@ -6,8 +6,8 @@ class Show < ActiveRecord::Base
 
   scope :visible, lambda { where(:visible => true) }
   scope :invisible, lambda { where(:visible => false) }
-  scope :sorted, lambda { order("show.position ASC") }
-  scope :newest_first, lambda { order("show.created_at DESC") }
+  scope :sorted, lambda { order("shows.position ASC") }
+  scope :newest_first, lambda { order("shows.created_at DESC") }
   scope :search, lambda { |query| where(["name like ?", "%#{query}%"]) }
   
 end

@@ -1,7 +1,7 @@
-<h2>Listing admins</h2>
+<h2>Listing <%= pluralize(@admins.count, 'admin') %></h2>
 
 <%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
-<%= link_to 'Add New Admin', new_admin_path, :class => 'new' %>
+<%= link_to 'Add New Admin', {:action => 'new'}, :class => 'new' %>
 
 <table id="admins" class="listing">
   <thead>
@@ -16,8 +16,8 @@
       <tr>
         <td><%= truncate(admin.email, length: 20) %></td>
         <td>
-            <%= link_to 'Edit', edit_admin_path(admin) %>
-            <%= link_to 'Destroy', {:action => 'delete', :id => admin.id}, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', {:action => 'edit', :id => admin.id} %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => admin.id} %>
         </td>
       </tr>
     <% end %>

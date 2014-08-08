@@ -1,0 +1,25 @@
+/*
+ * CSS for the forms.
+ *
+ */
+
+#form {
+  margin: 0 auto;
+  padding: 0 auto;
+  width: 14%;
+}
+
+.delete {
+  width: 33%;
+  text-align: center;
+}
+
+#delete-confirm{
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.delete p 
+{
+  font-size: 14px;
+}

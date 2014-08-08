@@ -6,8 +6,8 @@ class Episode < ActiveRecord::Base
   
   scope :visible, lambda { where(:visible => true) }
   scope :invisible, lambda { where(:visible => false) }
-  scope :sorted, lambda { order("episode.position ASC") }
-  scope :newest_first, lambda { order("episode.created_at DESC") }
+  scope :sorted, lambda { order("episodes.position ASC") }
+  scope :newest_first, lambda { order("episodes.created_at DESC") }
   scope :search, lambda { |query| where(["name like ?", "%#{query}%"]) }
   
 end

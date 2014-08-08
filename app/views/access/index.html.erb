@@ -2,7 +2,7 @@
   <h2>Admin Menu</h2>
   <div class="identity">Logged in as: <%= session[:admin] %> </div>
   <ul>
-    <li><%= link_to("Manage Shows", shows_path) %></li>
+    <li><%= link_to("Manage Shows", :controller => 'shows') %></li>
     <li><%= link_to("Manage Admins", :controller => 'admins') %></li>
     <li><%= link_to("Logout", :action => 'logout') %></li>
   </ul>

@@ -7,7 +7,7 @@ class SeasonsControllerTest < ActionController::TestCase
     @update = {
       :name => "Season Two",
       :permalink => "season2",
-      :position => 2,
+      :position => 1,
       :show_id => 1,
       :visible => false
     }

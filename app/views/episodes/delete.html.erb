@@ -1,0 +1,10 @@
+<% @page_title = "Delete Episode" %>
+<%= link_to("<< Back to Episodes", {:action => 'index', :season_id => @season.id}, :class => 'back') %>
+
+<div class="episode delete">
+  <h2>Delete Episode</h2>
+  <%= form_for :episode, :url => { :action => 'destroy', :id => @episode.id, :season_id => @season.id } do |f| %>
+    <p id="delete-confirm">Are you sure you want to permanently delete "<%= @episode.name %>"?</p>
+    <%= submit_tag("Delete Episode") %>
+  <% end %>
+</div>

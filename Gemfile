@@ -40,3 +40,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # for JRuby
 gem "jdbc-sqlite3", :platform => :jruby
+
+# Silence asset pipeline logs
+gem 'quiet_assets', group: :development

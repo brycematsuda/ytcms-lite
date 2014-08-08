@@ -1,12 +1,12 @@
-<h2>Listing seasons</h2>
+<h2>Listing <%= pluralize(@show.seasons.size, 'season') %> of <%= @show.name %></h2>
 
-<%= link_to 'Add New Season', new_season_path, :class => 'new' %>
+<%= link_to("<< Back to Shows", {:controller => 'shows', :action => 'index'}, :class => 'back') %>
+<%= link_to 'Add New Season', {:action => 'new', :show_id => @show.id}, :class => 'new' %>
 
 <table class="listing">
   <thead>
     <tr>
       <th>&nbsp;</th>
-      <th>Show</th>
       <th>Name</th>
       <th>Permalink</th>
       <th>Visible</th>
@@ -18,13 +18,14 @@
     <% @seasons.each do |season| %>
       <tr>
         <td><%= season.position %></td>
-        <td><%= season.show.name if season.show %></td>
         <td><%= season.name %></td>
         <td><%= season.permalink %></td>
         <td><%= season.visible ? "Yes" : "No" %></td>
-        <!--<td><%= link_to 'Show', season %></td>-->
-        <td><%= link_to 'Edit', edit_season_path(season) %>
-            <%= link_to 'Destroy', season, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+            <%= link_to("View Episodes", {:controller => 'episodes', :season_id => season.id}) %>
+            <%= link_to 'Edit', {:action => 'edit', :id => season.id, :show_id => @show.id } %>
+            <%= link_to("Delete", {:action => 'delete', :id => season.id, :show_id => @show.id}) %>
+        </td>
       </tr>
     <% end %>
   </tbody>

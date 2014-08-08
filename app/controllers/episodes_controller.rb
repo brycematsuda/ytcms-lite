@@ -1,9 +1,11 @@
 class EpisodesController < ApplicationController
   before_action :set_episode, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in
+  before_action :find_season
+
   # GET /episodes
   def index
-    @episodes = Episode.all
+    @episodes = @season.episodes.sorted
   end
 
   # GET /episodes/1
@@ -28,7 +30,8 @@ class EpisodesController < ApplicationController
     @episode = Episode.new(episode_params)
 
     if @episode.save
-      redirect_to @episode, notice: 'Episode was successfully created.'
+      flash[:notice] = "Episode was successfully created."
+      redirect_to(:action => 'index', :season_id => @season.id)
     else
       @seasons = Season.order('position ASC')
       @episode_count = Episode.count + 1
@@ -39,7 +42,8 @@ class EpisodesController < ApplicationController
   # PATCH/PUT /episodes/1
   def update
     if @episode.update(episode_params)
-      redirect_to @episode, notice: 'Episode was successfully updated.'
+      flash[:notice] = "Episode was successfully updated."
+      redirect_to(:action => 'index', :season_id => @season.id)
     else
       @episode_count = Episode.count
       @seasons = Season.order('position ASC')
@@ -47,10 +51,15 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def delete
+    @episode = Episode.find(params[:id])
+  end
+
   # DELETE /episodes/1
   def destroy
     @episode.destroy
-    redirect_to episodes_url, notice: 'Episode was successfully destroyed.'
+    flash[:notice] = "Episode was successfully destroyed."
+    redirect_to(:action => 'index', :season_id => @season.id)
   end
 
   private
@@ -62,5 +71,11 @@ class EpisodesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def episode_params
       params.require(:episode).permit(:season_id, :name, :position, :visible, :content_type, :content, :description)
+    end
+
+    def find_season
+      if params[:season_id]
+        @season = Season.find(params[:season_id])
+      end
     end
 end

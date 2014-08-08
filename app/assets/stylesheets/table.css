@@ -1,0 +1,26 @@
+/*
+ * CSS for the list tables.
+ *
+ */
+
+table.listing, th, td {
+  border: 1px solid black;
+}
+table.listing {
+  margin-top: 15px;
+  width: 700px;
+  border-collapse: collapse;
+}
+
+th, td {
+   padding: 5px 0px 10px 5px;}
+
+th {
+   text-transform: uppercase;
+   font-size: 90%;
+   border-bottom: 2px solid black;
+}
+
+td {
+  font-size: 90%
+}

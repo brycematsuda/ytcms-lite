@@ -9,8 +9,8 @@ class Season < ActiveRecord::Base
 
   scope :visible, lambda { where(:visible => true) }
   scope :invisible, lambda { where(:visible => false) }
-  scope :sorted, lambda { order("season.position ASC") }
-  scope :newest_first, lambda { order("season.created_at DESC") }
+  scope :sorted, lambda { order("seasons.position ASC") }
+  scope :newest_first, lambda { order("seasons.created_at DESC") }
   scope :search, lambda { |query| where(["name like ?", "%#{query}%"]) }
   
 end

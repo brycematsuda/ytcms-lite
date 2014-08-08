@@ -1,0 +1,8 @@
+<% @page_title = "Delete Admin" %>
+<%= link_to("<< Back to Admins", {:action => 'index'}, :class => 'back') %>
+
+<h2>Delete Admin</h2>
+<%= form_for :admin, :url => {:action => 'destroy', :id => @admin.id }, :html => {:class => 'delete'} do |f| %>
+  <p id="delete-confirm">Are you sure you want to permanently delete "<%= @admin.email %>"?</p>
+  <%= submit_tag("Delete Admin") %>
+<% end %>

@@ -1,0 +1,8 @@
+<% @page_title = "Delete Shows" %>
+<%= link_to("<< Back to Shows", {:action => 'index'}, :class => 'back') %>
+
+<h2>Delete Show</h2>
+<%= form_for :show, :url => {:action => 'destroy', :id => @show.id}, :html => {:class => 'delete'} do |f| %>
+  <p id="delete-confirm">Are you sure you want to permanently delete "<%= @show.name %>"?</p>
+  <%= submit_tag("Delete Show") %>
+<% end %>

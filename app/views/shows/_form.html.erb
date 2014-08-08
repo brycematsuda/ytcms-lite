@@ -1,16 +1,7 @@
-<% if @show.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@show.errors.count, "error") %> prohibited this show from being saved:</h2>
-
-    <ul>
-    <% @show.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for(@show) do |f| %>
+<div id="error_message">
+  <%= error_messages_for(@show) %>
+</div>
+<div id="form">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -25,5 +16,4 @@
   </div>
   <div class="actions">
     <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,10 +1,11 @@
 class SeasonsController < ApplicationController
   before_action :set_season, only: [:show, :edit, :update, :destroy]
   before_action :confirm_logged_in
+  before_action :find_show
 
   # GET /seasons
   def index
-    @seasons = Season.all
+    @seasons = @show.seasons.sorted
   end
 
   # GET /seasons/1
@@ -13,7 +14,7 @@ class SeasonsController < ApplicationController
 
   # GET /seasons/new
   def new
-    @season = Season.new
+    @season = Season.new({:show_id => @show.id})
     @season_count = Season.count + 1
     @shows = Show.order('position ASC')
   end
@@ -29,7 +30,8 @@ class SeasonsController < ApplicationController
     @season = Season.new(season_params)
 
     if @season.save
-      redirect_to @season, notice: 'Season was successfully created.'
+      flash[:notice] = "Season was successfully created."
+      redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
       @season_count = Season.count + 1
@@ -40,7 +42,8 @@ class SeasonsController < ApplicationController
   # PATCH/PUT /seasons/1
   def update
     if @season.update(season_params)
-      redirect_to @season, notice: 'Season was successfully updated.'
+      flash[:notice] = "Season was successfully updated."
+      redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
       @season_count = Season.count
@@ -48,10 +51,15 @@ class SeasonsController < ApplicationController
     end
   end
 
+  def delete
+    @season = Season.find(params[:id])
+  end
+
   # DELETE /seasons/1
   def destroy
-    @season.destroy
-    redirect_to seasons_url, notice: 'Season was successfully destroyed.'
+      @season.destroy
+      flash[:notice] = "Season was successfully destroyed."
+      redirect_to(:action => 'index', :show_id => @show.id)
   end
 
   private
@@ -63,5 +71,11 @@ class SeasonsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def season_params
       params.require(:season).permit(:show_id, :name, :position, :permalink, :visible)
+    end
+
+    def find_show
+      if params[:show_id]
+        @show = Show.find(params[:show_id])
+      end
     end
 end

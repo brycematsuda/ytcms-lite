@@ -1,3 +1,5 @@
-<%= link_to '<< Back to shows', shows_path, :class => 'back' %>
+<%= link_to '<< Back to shows', {:action => 'index'}, :class => 'back' %>
 <h2>Editing '<%= @show.name %>'</h2>
-<%= render 'form' %>
+<%= form_for(:show, :url => {:action => 'update', :id => @show.id}) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+<% end %>

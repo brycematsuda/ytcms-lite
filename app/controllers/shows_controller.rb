@@ -27,7 +27,8 @@ class ShowsController < ApplicationController
     @show = Show.new(show_params)
 
     if @show.save
-      redirect_to @show, notice: 'Show was successfully created.'
+      flash[:notice] = @show.name + " was successfully created."
+      redirect_to(:action => 'index')
     else
       @show_count = Show.count + 1
       render :new
@@ -37,17 +38,23 @@ class ShowsController < ApplicationController
   # PATCH/PUT /shows/1
   def update
     if @show.update(show_params)
-      redirect_to @show, notice: 'Show was successfully updated.'
+      flash[:notice] = @show.name + " was successfully updated."
+      redirect_to(:action => 'index')
     else
       @show_count = Show.count
       render :edit
     end
   end
 
+  def delete
+    @show = Show.find(params[:id])
+  end
+
   # DELETE /shows/1
   def destroy
     @show.destroy
-    redirect_to shows_url, notice: 'Show was successfully destroyed.'
+    flash[:notice] = @show.name + " was successfully destroyed."
+    redirect_to(:action => 'index')
   end
 
   private

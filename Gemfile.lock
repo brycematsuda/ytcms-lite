@@ -52,6 +52,8 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     polyglot (0.3.5)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -105,6 +107,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   jdbc-sqlite3
   jquery-rails
+  quiet_assets
   rails (= 4.1.4)
   sdoc (~> 0.4.0)
   spring

@@ -1,16 +1,7 @@
-<% if @episode.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
-
-    <ul>
-    <% @episode.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for(@episode) do |f| %>
+<div id="error_message">
+  <%= error_messages_for(@episode) %>
+</div>
+<div id="form">
   <div class="field">
     <%= f.label :season_id, "Season" %><br>
     <%= f.select(:season_id, @seasons.map { |s| [s.name, s.id] }) %>
@@ -43,4 +34,4 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+</div>

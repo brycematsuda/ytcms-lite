@@ -24,7 +24,8 @@ class AdminsController < ApplicationController
     @admin = Admin.new(admin_params)
 
     if @admin.save
-      redirect_to @admin, notice: 'Admin was successfully created.'
+      flash[:notice] = @admin.email + " was successfully created."
+      redirect_to(:action => 'index')
     else
       render :new
     end
@@ -33,17 +34,22 @@ class AdminsController < ApplicationController
   # PATCH/PUT /admins/1
   def update
     if @admin.update(admin_params)
-      redirect_to @admin, notice: 'Admin was successfully updated.'
+      flash[:notice] = @admin.email + " was successfully updated."
+      redirect_to(:action => 'index')
     else
       render :edit
     end
   end
 
+  def delete
+    @admin = Admin.find(params[:id])
+  end
+
   # DELETE /admins/1
   def destroy
-    @admin = Admin.find(params[:id])
-    @admin.destroy
-    redirect_to admins_url, notice: 'Admin was successfully destroyed.'
+    @admin = Admin.find(params[:id]).destroy
+      flash[:notice] = @admin.email + " was successfully destroyed."
+      redirect_to(:action => 'index')
   end
 
   private
