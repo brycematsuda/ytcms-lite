@@ -1,0 +1,17 @@
+  <% shows ||= [] %>
+  <ul>
+    <% shows.each do |show| %>
+    <% if !show.seasons.empty? %>
+      <li class="shows">
+        <p class="show-header"><%= show.name %></p>
+        <ul class="seasons">
+          <% show.seasons.visible.sorted.each do |season| %>
+            <% if !season.episodes.empty? %>
+            <li class="episodes"><%= link_to(season.name, {:action => 'show', :permalink => season.permalink}, :class => current_page?(:action => 'show', :permalink => season.permalink) ? "current" : "") %> </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>

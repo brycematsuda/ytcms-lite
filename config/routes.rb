@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
- 
+
+  root "public#index"
+
   get 'admin', :to => 'access#index'
-  
+  get 'show/:permalink', :to => 'public#show'
+
   match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.

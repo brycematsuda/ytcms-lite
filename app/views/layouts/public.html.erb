@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube CMS Lite</title>
+  <%= stylesheet_link_tag    'public', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'public', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="header">
+  <h1><%= link_to("YouTube CMS Lite User", { :action => 'index'}) %> </h1>
+  </div>
+  <div id="main">
+    <div id="navbar">
+    <%= render(:partial => 'layouts/navbar', :locals => {:shows => @shows}) %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

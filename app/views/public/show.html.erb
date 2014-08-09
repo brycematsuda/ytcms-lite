@@ -1,0 +1,9 @@
+<h2 id="season-header"><%= @season.name %></h2>
+<% @season.episodes.visible.sorted.each do |episode| %>
+<div class="episode">
+  <h3><%= episode.name %></h3>
+  <p><%= episode.content %></p>
+  <p><%= episode.description %></p>
+  <hr />
+</div>
+<% end %>
