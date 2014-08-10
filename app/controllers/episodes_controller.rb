@@ -70,7 +70,7 @@ class EpisodesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def episode_params
-      params.require(:episode).permit(:season_id, :name, :position, :visible, :content_type, :content, :description)
+      params.require(:episode).permit(:season_id, :name, :position, :visible, :content, :description)
     end
 
     def find_season

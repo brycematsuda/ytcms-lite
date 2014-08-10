@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806205852) do
+ActiveRecord::Schema.define(version: 20140810085149) do
 
   create_table "admins", force: true do |t|
     t.string   "email",           limit: 100, default: "", null: false
@@ -33,8 +33,7 @@ ActiveRecord::Schema.define(version: 20140806205852) do
     t.integer  "season_id"
     t.string   "name"
     t.integer  "position"
-    t.boolean  "visible",      default: false
-    t.string   "content_type"
+    t.boolean  "visible",     default: false
     t.text     "content"
     t.text     "description"
     t.datetime "created_at"

@@ -5,7 +5,6 @@ one:
   season_id: 1
   position: 1
   visible: false
-  content_type: HTML
   content: "The Phantom Menace"
   description: "A long long time ago, in a galaxy far away..."
 
