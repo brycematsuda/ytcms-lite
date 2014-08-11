@@ -1,0 +1,91 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-family: "Arial", sans-serif;
+}
+html, body {
+  height: 100%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li.episodes > a:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+li.episodes > a.current {
+  color: White;  
+}
+
+h2#season-header
+{
+  padding: 10px 0 10px 0;
+}
+
+#navbar {
+  float: left;
+  height: 200em;
+  width: 300px;
+  background: Red;
+  margin-left: -35px;
+  padding-top: 10px;
+  margin-right: 1em;
+}
+
+#header {
+  border-bottom: 2px solid black;
+  background-color: #AD3333;
+  color: #FFFFFF;
+  }
+
+#header h1 {
+  line-height: 2em;
+}
+
+#navbar {
+  border-right: 2px solid black;
+}
+
+#navbar ul li {
+  list-style: none;
+  font-size: 88%
+}
+
+li.shows {
+  margin-bottom: 10px;
+}
+
+p.show-header {
+  text-decoration: underline;
+}
+
+ul.seasons {
+  margin-left: -25px;
+}
+
+
+#content {
+  font-size: 90%
+}
+
+.episode
+{
+  padding: 6px 0px 3px 0px;
+}
+
+hr {
+  margin-right: 2em;
+}
