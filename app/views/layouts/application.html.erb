@@ -7,9 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="header">
-  <center>YouTube CMS Lite Admin</center>
-  </div>
+<nav class="navbar navbar-default" role="navigation">
+        <%= render(:partial => 'layouts/navbar_admin') %>
+  </nav>
   <div id="main">
   <% if !flash[:notice].blank? %>
     <div class="alert alert-success" role="alert">

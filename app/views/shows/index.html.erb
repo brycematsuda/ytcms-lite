@@ -3,7 +3,7 @@
   <div class="panel-body">
     <%= link_to '+ Add New Show', {:action => 'new'}, :class => "btn btn-default" %>
   </div>
-<div class="panel-heading">List of shows (<%= pluralize(@shows.size, 'show') %>)</div>
+<div class="panel-heading">Listing <%= pluralize(@shows.size, 'show') %></div>
 <table class="table">
   <thead>
     <tr>

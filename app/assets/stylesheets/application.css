@@ -27,21 +27,6 @@ h1, h2 {
   text-align: center;
 }
 
-#header {
-  border-bottom: 2px solid black;
-  background-color: #AD3333;
-  color: #FFFFFF;
-}
-
-#footer {
-  bottom: 0;
-  position: fixed;
-  height: 20px;
-  width: 100%;
-  border-top: 1px solid black;
-  text-align: center;
-}
-
 h2 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -55,10 +40,6 @@ h2 {
   margin-left: 20px;  
 }
 
-#content a.new {
-  margin-left: 8.3em;
-}
-
 #info{
   width: 20%;
   margin-top: 10px;
@@ -67,10 +48,6 @@ h2 {
 
 #info p {
   font-size: 100%;
-}
-
-a.edit-link {
-  margin-left: 40%;
 }
 
 .alert.alert-success {
