@@ -2,7 +2,7 @@
 <% @season.episodes.visible.sorted.each do |episode| %>
 <div class="episode">
   <h3><%= episode.name %></h3>
-  <p> <%= raw(sanitize(episode.content, :tags => ['iframe', 'a'])) %></p>
+  <p> <%= raw(sanitize(episode.embed_code, :tags => ['iframe', 'a'])) %></p>
   <p><%= episode.description %></p>
   <hr />
   <hr />

@@ -4,7 +4,7 @@ class Episode < ActiveRecord::Base
   acts_as_list
   
   validates :name, :presence => true
-  validates :content, :presence => true
+  validates :embed_code, :presence => true
   
   scope :visible, lambda { where(:visible => true) }
   scope :invisible, lambda { where(:visible => false) }

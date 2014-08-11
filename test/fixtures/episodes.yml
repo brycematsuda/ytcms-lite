@@ -5,7 +5,7 @@ one:
   season_id: 1
   position: 1
   visible: false
-  content: "The Phantom Menace"
+  embed_code: "The Phantom Menace"
   description: "A long long time ago, in a galaxy far away..."
 
 no_content:

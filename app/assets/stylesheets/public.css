@@ -17,13 +17,15 @@ h1, h2 {
 
 a {
   text-decoration: none;
-}
-
-a:visited {
   color: inherit;
 }
 
-a.current {
+li.episodes > a:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+li.episodes > a.current {
   color: White;  
 }
 
