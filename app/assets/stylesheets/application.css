@@ -17,6 +17,7 @@
 * {
   margin: 0 auto;
   padding: 0 auto;
+  font-family: "Arial", sans-serif;
 }
 html, body {
   height: 100%;
@@ -28,14 +29,8 @@ h1, h2 {
 
 #header {
   border-bottom: 2px solid black;
-  padding-bottom: 1.5em;
-  margin-bottom: 20px;
   background-color: #AD3333;
   color: #FFFFFF;
-  }
-
-#header h1 {
-  line-height: 2em;
 }
 
 #footer {
@@ -53,7 +48,7 @@ h2 {
 }
 
 #content {
-  font-size: 125%;
+  font-size: 110%;
 }
 
 #content a.back {
@@ -78,13 +73,6 @@ a.edit-link {
   margin-left: 40%;
 }
 
-.notice {
+.alert.alert-success {
   text-align: center;
-  padding: 10px;
-  border: 2px solid black;
-  background-color: #33cc33;
-  margin-bottom: 7px;
-  width: 30%;
-  font-size: 14px;
-  font-weight: bold;
 }

@@ -8,11 +8,11 @@
 </head>
 <body>
   <div id="header">
-  <h1>YouTube CMS Lite</h1>
+  <center>YouTube CMS Lite Admin</center>
   </div>
   <div id="main">
   <% if !flash[:notice].blank? %>
-    <div class="notice">
+    <div class="alert alert-success" role="alert">
       <%= flash[:notice] %>
     </div>
     <% end %>

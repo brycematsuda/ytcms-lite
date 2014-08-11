@@ -3,15 +3,12 @@
  *
  */
 
-table.listing, th, td {
-  border: 1px solid black;
-}
-table.listing {
+/*table.heading {
   margin-top: 15px;
   width: 700px;
   border-collapse: collapse;
-}
-
+}*/
+/*
 th, td {
    padding: 5px 0px 10px 5px;}
 
@@ -23,4 +20,26 @@ th {
 
 td {
   font-size: 90%
+}*/
+
+div.panel.panel-default {
+  margin-top: 15px;
+  width: 700px;
+}
+
+div.panel-heading {
+  text-align: center;
+  border-top: 1px solid black;
+}
+
+form.button_to {
+  display: inline;
+}
+
+form.button_to div{
+  display: inline;
+}
+
+form#new.button_to {
+  float: left;
 }

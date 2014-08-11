@@ -6,7 +6,11 @@
 form {
   margin: 0 auto;
   padding: 0 auto;
-  width: 14%;
+  width: 45%;
+}
+
+div#form {
+  margin-left: 25%;
 }
 
 .delete {
@@ -26,4 +30,13 @@ form {
 
 form.delete {
   width: 30%
+}
+
+.error-alert {
+  text-align: center;
+}
+
+h3.error-alert {
+
+  font-weight: bold;
 }
