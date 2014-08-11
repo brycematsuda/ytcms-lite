@@ -1,9 +1,10 @@
-<h2>Listing <%= pluralize(@admins.count, 'admin') %></h2>
-
 <%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
-<%= link_to 'Add New Admin', {:action => 'new'}, :class => 'new' %>
-
-<table id="admins" class="listing">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= link_to '+ Add New Admin', {:action => 'new'}, :class => "btn btn-default" %>
+  </div>
+  <div class="panel-heading">Listing <%= pluralize(@admins.count, 'admin') %></div>
+<table id="admins" class="table">
   <thead>
     <tr>
       <th>Email</th>
@@ -16,10 +17,13 @@
       <tr>
         <td><%= truncate(admin.email, length: 20) %></td>
         <td>
-            <%= link_to 'Edit', {:action => 'edit', :id => admin.id} %>
-            <%= link_to 'Destroy', {:action => 'delete', :id => admin.id} %>
+        <div class="btn-group">
+            <%= link_to 'Edit', {:action => 'edit', :id => admin.id}, :class => "btn btn-default"  %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => admin.id}, :class => "btn btn-default"  %>
+        </div>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

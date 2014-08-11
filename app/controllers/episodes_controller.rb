@@ -15,14 +15,14 @@ class EpisodesController < ApplicationController
   # GET /episodes/new
   def new
     @episode = Episode.new
-    @episode_count = Episode.count + 1
+    @episode_count = @season.episodes.size + 1
     @seasons = Season.order('position ASC')
   end
 
   # GET /episodes/1/edit
   def edit
     @seasons = Season.order('position ASC')
-    @episode_count = Episode.count
+    @episode_count = @season.episodes.size
   end
 
   # POST /episodes
@@ -30,11 +30,11 @@ class EpisodesController < ApplicationController
     @episode = Episode.new(episode_params)
 
     if @episode.save
-      flash[:notice] = "Episode was successfully created."
+      flash[:notice] = "\"" + @episode.name + "\" was successfully created."
       redirect_to(:action => 'index', :season_id => @season.id)
     else
       @seasons = Season.order('position ASC')
-      @episode_count = Episode.count + 1
+      @episode_count = @season.episodes.size  + 1
       render :new
     end
   end
@@ -42,7 +42,7 @@ class EpisodesController < ApplicationController
   # PATCH/PUT /episodes/1
   def update
     if @episode.update(episode_params)
-      flash[:notice] = "Episode was successfully updated."
+      flash[:notice] = "\"" + @episode.name + "\" was successfully updated."
       redirect_to(:action => 'index', :season_id => @season.id)
     else
       @episode_count = Episode.count
@@ -58,7 +58,7 @@ class EpisodesController < ApplicationController
   # DELETE /episodes/1
   def destroy
     @episode.destroy
-    flash[:notice] = "Episode was successfully destroyed."
+    flash[:notice] = "\"" + @episode.name + "\" was successfully destroyed."
     redirect_to(:action => 'index', :season_id => @season.id)
   end
 
@@ -70,7 +70,7 @@ class EpisodesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def episode_params
-      params.require(:episode).permit(:season_id, :name, :position, :visible, :content, :description)
+      params.require(:episode).permit(:season_id, :name, :position, :visible, :embed_code, :description)
     end
 
     def find_season

@@ -1,12 +1,13 @@
-<h2>Listing <%= pluralize(@season.episodes.size, 'episode')%> of "<%= @season.name %>"</h2>
-
-<%= link_to("<< Back to Seasons", {:controller => 'seasons', :action => 'index', :show_id => @season.show_id}, :class => 'back') %>
-<%= link_to("Add New Episode", {:action => 'new', :season_id => @season.id}, :class => 'new') %>
-
-<table class="listing">
+<%= link_to("<< Back to \"" + @season.show.name + " - " + @season.name + "\"", {:controller => 'seasons', :action => 'index', :show_id => @season.show_id}, :class => 'back') %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= link_to("+ Add New Episode", {:action => 'new', :season_id => @season.id}, :class => "btn btn-default") %>
+  </div>
+<div class="panel-heading">Listing <%= pluralize(@season.episodes.size, 'episode')%> of "<%= @season.show.name %> - <%= @season.name %>"</div>
+<table class="table">
   <thead>
     <tr>
-      <th>&nbsp;</th>
+      <th>#</th>
       <th>Name</th>
       <th>Visible</th>
       <th>Description</th>
@@ -21,10 +22,15 @@
         <td><%= episode.name %></td>
         <td><%= episode.visible ? "Yes" : "No" %></td>
         <td><%= truncate(episode.description, length: 17) %></td>
-        <td><%= link_to("View Details", {:action => 'show', :id => episode.id, :season_id => @season.id}) %>
-          <%= link_to("Edit", {:action => 'edit', :id => episode.id, :season_id => @season.id}) %>
-          <%= link_to("Delete", {:action => 'delete', :id => episode.id, :season_id => @season.id}) %></td>
+        <td> 
+          <div class="btn-group">
+            <%= link_to("View Details", {:action => 'show', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
+            <%= link_to("Edit", {:action => 'edit', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
+            <%= link_to("Delete", {:action => 'delete', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

@@ -1,3 +1,5 @@
-<%= link_to '<< Back to Admins', admins_path, :class => 'back' %>
+<%= link_to '<< Back to Admins', {:action => 'index'}, :class => 'back' %>
 <h2>Editing admin</h2>
-<%= render 'form' %>
+<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+<% end %>

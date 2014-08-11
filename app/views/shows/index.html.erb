@@ -1,7 +1,7 @@
-<%= link_to '<< Back to Admin Panel', 'admin', method: :get %>
+<%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
 <div class="panel panel-default">
   <div class="panel-body">
-    <%= button_to '+ Add New Show', {:action => 'new'}, :class => "btn btn-default", :form => { :id => "new" }, method: :get %>
+    <%= link_to '+ Add New Show', {:action => 'new'}, :class => "btn btn-default" %>
   </div>
 <div class="panel-heading">List of shows (<%= pluralize(@shows.size, 'show') %>)</div>
 <table class="table">
@@ -21,10 +21,10 @@
         <td><%= show.name %></td>
         <td><%= show.visible ? "Yes" : "No" %></td>
         <td>
-          <div class="options">
-            <%= button_to 'View Seasons', {:controller => 'seasons', :show_id => show.id}, :class => "btn btn-default", method: :post %>
-            <%= button_to 'Edit', {:action => 'edit', :id => show.id}, :class => "btn btn-default", method: :post %>
-            <%= button_to 'Destroy', {:action => 'delete', :id => show.id}, :class => "btn btn-default", method: :get %>
+          <div class="btn-group">
+            <%= link_to 'View Seasons', {:controller => 'seasons', :show_id => show.id}, :class => "btn btn-default" %>
+            <%= link_to 'Edit', {:action => 'edit', :id => show.id}, :class => "btn btn-default" %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => show.id}, :class => "btn btn-default" %>
           </div>
         </td>
       </tr>
