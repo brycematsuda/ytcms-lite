@@ -15,13 +15,13 @@ class SeasonsController < ApplicationController
   # GET /seasons/new
   def new
     @season = Season.new({:show_id => @show.id})
-    @season_count = Season.count + 1
+    @season_count = @show.seasons.size + 1
     @shows = Show.order('position ASC')
   end
 
   # GET /seasons/1/edit
   def edit
-    @season_count = Season.count
+    @season_count = @show.seasons.size
     @shows = Show.order('position ASC')
   end
 
@@ -34,7 +34,7 @@ class SeasonsController < ApplicationController
       redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
-      @season_count = Season.count + 1
+      @season_count = @show.seasons.size + 1
       render :new
     end
   end
@@ -46,7 +46,7 @@ class SeasonsController < ApplicationController
       redirect_to(:action => 'index', :show_id => @show.id)
     else
       @shows = Show.order('position ASC')
-      @season_count = Season.count
+      @season_count = @show.seasons.size
       render :edit
     end
   end

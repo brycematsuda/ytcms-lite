@@ -3,7 +3,7 @@
 <div class="episode">
   <h3><%= episode.name %></h3>
   <p> <%= raw(sanitize(episode.embed_code, :tags => ['iframe', 'a'])) %></p>
-  <p><%= episode.description %></p>
+  <p style="white-space:pre-wrap;"><%= episode.description %></p>
   <hr />
 </div>
 <% end %>
