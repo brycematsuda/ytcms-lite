@@ -1,12 +1,13 @@
-<h2>Listing <%= pluralize(@shows.size, 'show') %></h2>
-
 <%= link_to '<< Back to Admin Panel', 'admin', :class => 'back' %>
-<%= link_to 'Add New Show', {:action => 'new'}, :class => 'new' %>
-
-<table id="shows" class="listing">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= link_to '+ Add New Show', {:action => 'new'}, :class => "btn btn-default" %>
+  </div>
+<div class="panel-heading">Listing <%= pluralize(@shows.size, 'show') %></div>
+<table class="table">
   <thead>
     <tr>
-      <th>&nbsp;</th>
+      <th>#</th>
       <th>Name</th>
       <th>Visible</th>
       <th>Options</th>
@@ -20,11 +21,14 @@
         <td><%= show.name %></td>
         <td><%= show.visible ? "Yes" : "No" %></td>
         <td>
-            <%= link_to 'View Seasons', {:controller => 'seasons', :show_id => show.id} %>
-            <%= link_to 'Edit', {:action => 'edit', :id => show.id} %>
-            <%= link_to 'Destroy', {:action => 'delete', :id => show.id} %>
+          <div class="btn-group">
+            <%= link_to 'View Seasons', {:controller => 'seasons', :show_id => show.id}, :class => "btn btn-default" %>
+            <%= link_to 'Edit', {:action => 'edit', :id => show.id}, :class => "btn btn-default" %>
+            <%= link_to 'Destroy', {:action => 'delete', :id => show.id}, :class => "btn btn-default" %>
+          </div>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

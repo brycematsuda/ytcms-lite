@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="header">
-  <h1><%= link_to("YouTube CMS Lite User", { :action => 'index'}) %> </h1>
-  </div>
-  <div id="main">
-    <div id="navbar">
-    <%= render(:partial => 'layouts/navbar', :locals => {:shows => @shows}) %>
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+       <nav class="navbar navbar-default" role="navigation">
+        <%= render(:partial => 'layouts/navbar', :locals => {:shows => @shows}) %>
+        </nav>
+      <div id="content">
+        <%= yield %>
+      </div>
     </div>
-    <div id="content">
-      <%= yield %>
-    </div>
   </div>
+</div>
 </body>
 </html>

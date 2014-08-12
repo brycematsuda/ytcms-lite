@@ -3,24 +3,28 @@
  *
  */
 
-table.listing, th, td {
-  border: 1px solid black;
-}
-table.listing {
+div.panel.panel-default {
   margin-top: 15px;
-  width: 700px;
-  border-collapse: collapse;
+  width: 800px;
 }
 
-th, td {
-   padding: 5px 0px 10px 5px;}
-
-th {
-   text-transform: uppercase;
-   font-size: 90%;
-   border-bottom: 2px solid black;
+div.panel-heading {
+  text-align: center;
+  border-top: 1px solid black;
 }
 
-td {
-  font-size: 90%
+form.button_to {
+  display: inline;
+}
+
+form.button_to div{
+  display: inline;
+}
+
+form#new.button_to {
+  float: left;
+}
+
+table.table tbody tr td {
+  position: relative;
 }

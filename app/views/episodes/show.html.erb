@@ -1,33 +1,45 @@
-
-<%= link_to("<< Back to Season", {:action => 'index', :season_id => @season.id}, :class => 'back') %>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Season:</strong>
-  <%= @episode.season_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @episode.name %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @episode.position %>
-</p>
-
-<p>
-  <strong>Visible:</strong>
-  <%= @episode.visible %>
-</p>
-
-<p>
-  <strong>Embed Code:</strong>
-  <%= @episode.embed_code %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @episode.description %>
-</p>
+<%= link_to("<< Back to \"" + @season.name + "\" episodes", {:action => 'index', :season_id => @season.id}, :class => 'back') %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <p>
+      <strong>Show:</strong>
+      <%= @episode.season.show.name %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Season:</strong>
+      <%= @episode.season.name %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Name:</strong>
+      <%= @episode.name %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Position:</strong>
+      <%= @episode.position %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Visible:</strong>
+      <%= @episode.visible %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Embed Code:</strong>
+      <%= @episode.embed_code %>
+    </p>
+  </li>
+  <li class="list-group-item">
+    <p>
+      <strong>Description:</strong>
+      <%= @episode.description %>
+    </p>
+  </li>
+</ul>

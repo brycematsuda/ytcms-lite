@@ -1,24 +1,27 @@
-<div id="error_message">
-  <%= error_messages_for(@show) %>
-</div>
+<% if @season && @season.errors.size > 0 %>
+  <div class="alert alert-danger", role="alert">
+    <%= error_messages_for(@season) %>
+  </div>
+<% end %>
+
 <div id="form">
-  <div class="field">
+  <div class="form-group">
     <%= f.label :show_id, "Show" %><br>
     <%= f.select(:show_id, @shows.map { |s| [s.name, s.id] }) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :position %><br>
     <%= f.select(:position, 1..@season_count) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :permalink %><br>
     <%= f.text_field :permalink %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :visible %><br>
     <%= f.check_box :visible %>
   </div>

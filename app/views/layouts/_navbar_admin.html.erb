@@ -1,0 +1,16 @@
+  <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="/admin">YouTube CMS Lite Admin</a>
+ </div>
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ <% if session[:admin_id] && session[:admin] %>
+  <ul class="nav navbar-nav">
+    <li><%= link_to("Public Home", :controller => 'public') %></li>
+    <li><%= link_to("Manage Shows", :controller => 'shows') %></li>
+    <li><%= link_to("Manage Admins", :controller => 'admins') %></li>
+    <li><%= link_to("Logout", :controller => 'access', :action => 'logout') %></li>    
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <p class="navbar-text">Logged in as <%= session[:admin] %></p>
+  </ul>
+  <% end %>
+</div>

@@ -1,19 +1,23 @@
-<div id="error_message">
-  <%= error_messages_for(@show) %>
-</div>
+<% if @show && @show.errors.size > 0 %>
+  <div class="alert alert-danger", role="alert">
+    <%= error_messages_for(@show) %>
+  </div>
+<% end %>
+
 <div id="form">
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :position %><br>
     <%= f.select(:position, 1..@show_count) %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :visible %><br>
     <%= f.check_box :visible %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="submit">
+  <%= f.submit %>
+  </div>
 </div>

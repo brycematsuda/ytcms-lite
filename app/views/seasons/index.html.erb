@@ -1,12 +1,13 @@
-<h2>Listing <%= pluralize(@show.seasons.size, 'season') %> of <%= @show.name %></h2>
-
 <%= link_to("<< Back to Shows", {:controller => 'shows', :action => 'index'}, :class => 'back') %>
-<%= link_to 'Add New Season', {:action => 'new', :show_id => @show.id}, :class => 'new' %>
-
-<table class="listing">
+<div class="panel panel-default">
+  <div class="panel-body">
+<%= link_to '+ Add New Season', {:action => 'new', :show_id => @show.id}, :class => "btn btn-default" %>
+</div>
+<div class="panel-heading">Listing <%= pluralize(@show.seasons.size, 'season') %> of "<%= @show.name %>"</div>
+<table class="table">
   <thead>
     <tr>
-      <th>&nbsp;</th>
+      <th>#</th>
       <th>Name</th>
       <th>Permalink</th>
       <th>Visible</th>
@@ -22,11 +23,14 @@
         <td><%= truncate(season.permalink, length: 20) %></td>
         <td><%= season.visible ? "Yes" : "No" %></td>
         <td>
-            <%= link_to("View Episodes", {:controller => 'episodes', :season_id => season.id}) %>
-            <%= link_to 'Edit', {:action => 'edit', :id => season.id, :show_id => @show.id } %>
-            <%= link_to("Delete", {:action => 'delete', :id => season.id, :show_id => @show.id}) %>
+        <div class="btn-group">
+            <%= link_to "View Episodes", {:controller => 'episodes', :season_id => season.id}, :class => "btn btn-default" %>
+            <%= link_to 'Edit', {:action => 'edit', :id => season.id, :show_id => @show.id }, :class => "btn btn-default" %>
+            <%= link_to "Delete", {:action => 'delete', :id => season.id, :show_id => @show.id}, :class => "btn btn-default" %>
+            </div>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
