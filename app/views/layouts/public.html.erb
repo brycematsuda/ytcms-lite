@@ -4,20 +4,25 @@
   <title>YouTube CMS Lite</title>
   <%= stylesheet_link_tag    'public', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'public', 'data-turbolinks-track' => true %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
     <div class="row clearfix">
       <div class="col-md-12 column">
-       <nav class="navbar navbar-default" role="navigation">
-        <%= render(:partial => 'layouts/navbar', :locals => {:shows => @shows}) %>
+        <center><img id="banner" src="http://lorempixel.com/g/1140/200/abstract/Lorem ipsum dolor sit amet" alt="..."></center>
+        <nav class="navbar navbar-default" role="navigation">
+          <%= render(:partial => 'layouts/navbar', :locals => {:shows => @shows}) %>
         </nav>
-      <div id="content">
         <%= yield %>
       </div>
     </div>
   </div>
-</div>
+  <div id="footer">
+    <div class="container">
+    <h6><p style="text-align:center;" class="muted credit">&copy; 2014 <a href="http://brycematsuda.github.io">Bryce Matsuda</a></p></h6>
+    </div>
+  </div>
 </body>
 </html>

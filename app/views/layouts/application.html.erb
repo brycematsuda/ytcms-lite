@@ -7,17 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
-        <%= render(:partial => 'layouts/navbar_admin') %>
+  <nav class="navbar navbar-default" role="navigation">
+    <%= render(:partial => 'layouts/navbar_admin') %>
   </nav>
   <div id="main">
-  <% if !flash[:notice].blank? %>
+    <% if !flash[:notice].blank? %>
     <div class="alert alert-success" role="alert">
       <%= flash[:notice] %>
     </div>
     <% end %>
     <div id="content">
       <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      <h6><p style="text-align:center;" class="muted credit">&copy; 2014 <a href="http://brycematsuda.github.io">Bryce Matsuda</a></p></h6>
     </div>
   </div>
 </body>

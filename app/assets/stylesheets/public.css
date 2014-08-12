@@ -9,9 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- 
- *= require_self
+ *
  *= require bootstrap.min
+ *= require bootstrap-social
+ *= require_self
  */
 * {
   margin: 0 auto;
@@ -26,8 +27,7 @@ h1, h2 {
   text-align: center;
 }
 
-h2#season-header
-{
+h2#season-header {
   padding: 10px 0 10px 0;
 }
 
@@ -35,14 +35,38 @@ h2#season-header
   font-size: 90%
 }
 
-nav.navbar.navbar-default {
-  margin-top: 10px;
-}
-.episode
-{
+.episode {
   padding: 6px 0px 3px 0px;
 }
 
 hr {
   margin-right: 2em;
+}
+
+div#carousel-example-generic {
+  width: 70%
+}
+
+div.col-md-3.column{
+  height: 100%;
+}
+
+#banner {
+  margin-top: 10px;
+  margin-bottom: -3px;
+  width: 100%;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  border:1px solid #FFFFFF;
+}
+
+/* Override Bootstrap 3 font locations */
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('../assets/glyphicons-halflings-regular.eot');
+src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
