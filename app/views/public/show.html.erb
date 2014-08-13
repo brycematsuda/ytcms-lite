@@ -1,9 +1,16 @@
 <h2 id="season-header"><%= @season.show.name %> - <%= @season.name %></h2>
+ <hr />
 <% @season.episodes.visible.sorted.each do |episode| %>
 <div class="episode">
-  <h3><%= episode.name %></h3>
-  <p> <%= raw(sanitize(episode.embed_code, :tags => ['iframe', 'a'])) %></p>
-  <p style="white-space:pre-wrap;"><%= episode.description %></p>
+  <h3 id="episode-header"><%= episode.name %></h3>
+  <div class="episode-video">
+    <p> <%= raw(sanitize(episode.embed_code, :tags => ['iframe', 'a'])) %></p>
+  </div>
+  <div class="episode-description">
+    <p><strong>Description:</strong></p>
+    <p style="white-space:pre-wrap;"><%= episode.description %></p>
+  </div>
+  <div class="cf"></div>
   <hr />
 </div>
 <% end %>

@@ -26,29 +26,57 @@ html, body {
 h1, h2 {
   text-align: center;
 }
-
+  
 h2#season-header {
   padding: 10px 0 10px 0;
+}
+
+#episode-header {
+  margin: 0 auto;
+  padding-bottom: 15px;
 }
 
 #content {
   font-size: 90%
 }
 
-.episode {
-  padding: 6px 0px 3px 0px;
-}
 
 hr {
   margin-right: 2em;
 }
 
-div#carousel-example-generic {
-  width: 70%
-}
-
 div.col-md-3.column{
   height: 100%;
+}
+
+.episode {
+  clear: both;
+  padding: 6px 0px 3px 0px;
+}
+
+.episode-description {
+  float: left;
+  max-width: 50%;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.episode-video {
+  float: left;
+}
+
+.episode-video iframe {
+    max-width: 95%;
+}
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
 }
 
 #banner {
