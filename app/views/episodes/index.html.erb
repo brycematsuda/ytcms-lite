@@ -24,9 +24,9 @@
         <td><%= truncate(episode.description, length: 17) %></td>
         <td> 
           <div class="btn-group">
-            <%= link_to("View Details", {:action => 'show', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
-            <%= link_to("Edit", {:action => 'edit', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
-            <%= link_to("Delete", {:action => 'delete', :id => episode.id, :season_id => @season.id}, :class => "btn btn-default") %>
+            <%= link_to("View Details", {:action => 'show', :id => episode.id, :season_id => episode.season.id}, :class => "btn btn-default") %>
+            <%= link_to("Edit", {:action => 'edit', :id => episode.id, :season_id => episode.season.id}, :class => "btn btn-default") %>
+            <%= link_to("Delete", {:action => 'delete', :id => episode.id, :season_id => episode.season.id}, :class => "btn btn-default") %>
           </div>
         </td>
       </tr>
