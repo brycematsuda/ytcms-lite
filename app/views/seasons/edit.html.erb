@@ -1,3 +1,4 @@
+<% @page_title = "Editing \"" + @season.name + "\"" %>
 <%= link_to '<< Back to Seasons', {:action => 'index', :show_id => @show.id}, :class => 'back' %>
 <h1>Editing "<%= @season.name %>"</h1>
 <%= form_for(:season, :url => {:action => 'update', :id => @season.id, :show_id => @show.id}) do |f| %>

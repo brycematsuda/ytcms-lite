@@ -1,3 +1,4 @@
+<% @page_title = "Editing \"" + @show.name + "\"" %>
 <%= link_to '<< Back to Shows', {:action => 'index'}, :class => 'back' %>
 <h2>Editing '<%= @show.name %>'</h2>
 <%= form_for(:show, :url => {:action => 'update', :id => @show.id}) do |f| %>

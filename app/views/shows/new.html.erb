@@ -1,3 +1,4 @@
+<% @page_title = "New Show" %>
 <%= link_to '<< Back to Shows', {:action => 'index'}, :class => 'back' %>
 <h2>New show</h2>
 <%= form_for(:show, :url => {:action => 'create'}, :html => { role: "form" }) do |f| %>

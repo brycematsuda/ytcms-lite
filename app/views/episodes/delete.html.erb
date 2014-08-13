@@ -1,4 +1,4 @@
-<% @page_title = "Delete Episode" %>
+<% @page_title = "Delete \"" + @episode.name + "\"" %>
 <%= link_to("<< Back to \"" + @season.name + "\" episodes", {:action => 'index', :season_id => @season.id}, :class => 'back') %>
 
 <div class="episode delete">

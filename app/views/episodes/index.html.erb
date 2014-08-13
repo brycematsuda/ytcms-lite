@@ -1,3 +1,4 @@
+<% @page_title = "Episodes of \"" + @season.show.name + " - " + @season.name + "\"" %>
 <%= link_to("<< Back to \"" + @season.show.name + " - " + @season.name + "\"", {:controller => 'seasons', :action => 'index', :show_id => @season.show_id}, :class => 'back') %>
 <div class="panel panel-default">
   <div class="panel-body">
