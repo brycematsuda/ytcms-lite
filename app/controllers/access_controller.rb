@@ -2,10 +2,6 @@ class AccessController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
-  def index
-    # panel page
-  end
-
   def login
     # login form
   end
@@ -24,7 +20,7 @@ class AccessController < ApplicationController
       session[:admin] = authorized_admin.email
       puts session[:admin_id]
       puts session[:admin]
-      redirect_to action: :index
+      redirect_to(:controller => 'shows', :action => 'index')
     else
       flash[:notice] = "Invalid email/password combination."
       redirect_to action: :login

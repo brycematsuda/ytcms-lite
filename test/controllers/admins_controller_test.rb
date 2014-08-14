@@ -2,7 +2,8 @@ require 'test_helper'
 
 class AdminsControllerTest < ActionController::TestCase
   setup do
-    login_as(:admin)
+    session[:admin_id] = "1"
+    session[:admin] = "admin@example.com"
     @admin = admins(:one)
     @update = {
      :email => 'update@example.com',

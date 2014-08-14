@@ -2,12 +2,8 @@ require 'test_helper'
 
 class AccessControllerTest < ActionController::TestCase
   setup do
-    login_as(:admin)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
+    session[:admin_id] = "1"
+    session[:admin] = "admin@example.com"
   end
 
   test "should get login" do
