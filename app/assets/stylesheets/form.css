@@ -31,6 +31,10 @@ div#form {
   font-size: 14px;
 }
 
+div.alert.alert-danger.alert-dismissible {
+  max-width: 50%;
+}
+
 form.delete {
   width: 30%
 }
