@@ -26,7 +26,7 @@ class AdminsControllerTest < ActionController::TestCase
       post :create, admin: @update
     end
 
-    assert_redirected_to admin_path(assigns(:admin))
+    assert_redirected_to action: "index"
   end
 
   test "should show admin" do
@@ -41,7 +41,7 @@ class AdminsControllerTest < ActionController::TestCase
 
   test "should update admin" do
     patch :update, id: @admin, admin: @update
-    assert_redirected_to admin_path(assigns(:admin))
+    assert_redirected_to action: "index"
   end
 
   test "should destroy admin" do
@@ -49,6 +49,6 @@ class AdminsControllerTest < ActionController::TestCase
       delete :destroy, id: @admin
     end
 
-    assert_redirected_to admins_path
+    assert_redirected_to action: "index"
   end
 end

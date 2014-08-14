@@ -2,7 +2,9 @@ require 'test_helper'
 
 class ShowsControllerTest < ActionController::TestCase
   setup do
-    login_as(:admin)
+    session[:admin_id] = "1"
+    session[:admin] = "admin@example.com"
+
     @show = shows(:one)
     @update = {
       :name => 'Show Two',
@@ -27,7 +29,7 @@ class ShowsControllerTest < ActionController::TestCase
       post :create, show: @update
     end
 
-    assert_redirected_to show_path(assigns(:show))
+    assert_redirected_to action: "index"
   end
 
   test "should show show" do
@@ -42,7 +44,7 @@ class ShowsControllerTest < ActionController::TestCase
 
   test "should update show" do
     patch :update, id: @show, show: @update
-    assert_redirected_to show_path(assigns(:show))
+    assert_redirected_to action: "index"
   end
 
   test "should destroy show" do
@@ -50,6 +52,6 @@ class ShowsControllerTest < ActionController::TestCase
       delete :destroy, id: @show
     end
 
-    assert_redirected_to shows_path
+    assert_redirected_to action: "index"
   end
 end

@@ -1,5 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+one:
+  name: "One Show"
+  position: 1
+  visible: true
+  
 already_taken:
   name: "The Already Been Taken Show"
 

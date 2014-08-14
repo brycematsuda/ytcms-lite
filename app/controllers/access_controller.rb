@@ -22,6 +22,8 @@ class AccessController < ApplicationController
       flash[:notice] = "You are now logged in."
       session[:admin_id] = authorized_admin.id
       session[:admin] = authorized_admin.email
+      puts session[:admin_id]
+      puts session[:admin]
       redirect_to action: :index
     else
       flash[:notice] = "Invalid email/password combination."

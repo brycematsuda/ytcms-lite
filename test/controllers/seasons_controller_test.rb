@@ -1,35 +1,38 @@
-require 'test_helper'
+require 'test_helper' 
 
 class SeasonsControllerTest < ActionController::TestCase
   setup do
-    login_as(:admin)
+    session[:admin_id] = "1"
+    session[:admin] = "admin@example.com"
+
+    @show = shows(:one)
     @season = seasons(:one)
     @update = {
-      :name => "Season Two",
-      :permalink => "season2",
+      :name => "Season Update",
+      :show_id => @show.id,
       :position => 1,
-      :show_id => 1,
-      :visible => false
+      :visible => true,
+      :permalink => "seasonupdate"
     }
   end
 
   test "should get index" do
-    get :index
+    get :index, :show_id => @show.id
     assert_response :success
     assert_not_nil assigns(:seasons)
   end
 
   test "should get new" do
-    get :new
+    get :new, :show_id => @show.id
     assert_response :success
   end
 
   test "should create season" do
     assert_difference('Season.count') do
-      post :create, season: @update
+      post :create, season: @update, :show_id => @show.id
     end
 
-    assert_redirected_to season_path(assigns(:season))
+    assert_redirected_to action: "index", :show_id => @show.id
   end
 
   test "should show season" do
@@ -38,20 +41,20 @@ class SeasonsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @season
+    get :edit, id: @season, :show_id => @show.id
     assert_response :success
   end
 
   test "should update season" do
-    patch :update, id: @season, season: @update
-    assert_redirected_to season_path(assigns(:season))
+    patch :update, id: @season, season: seasons(:one).attributes, :show_id => @show.id
+    assert_redirected_to action: "index", :show_id => @show.id
   end
 
   test "should destroy season" do
     assert_difference('Season.count', -1) do
-      delete :destroy, id: @season
+      delete :destroy, id: @season, :show_id => @show.id
     end
 
-    assert_redirected_to seasons_path
+    assert_redirected_to action: "index", :show_id => @show.id
   end
 end

@@ -2,10 +2,10 @@
 
 one:
   name: "Episode One"
-  season_id: 1
+  season: one
   position: 1
   visible: false
-  embed_code: "The Phantom Menace"
+  embed_code: "<iframe>someembedcodegoeshere</iframe>"
   description: "A long long time ago, in a galaxy far away..."
 
 no_content:

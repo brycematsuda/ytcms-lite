@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: "Season One"
-  show_id: 1
+  name: "Season Test Me"
+  show: one
   position: 1
-  visible: false
-  permalink: "season1"
+  visible: true
+  permalink: "season12345"
 
 not_unique:
   name: "A Season Without A Unique Permalink"
