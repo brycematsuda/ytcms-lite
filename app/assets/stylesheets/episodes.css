@@ -5,4 +5,5 @@
 ul.list-group{
   width: 500px;
   margin-top: 20px;
+  max-width: 90%;
 }

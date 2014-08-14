@@ -62,6 +62,7 @@ div.col-md-3.column{
 }
 
 .episode-video {
+  max-width: 50%;
   float: left;
 }
 

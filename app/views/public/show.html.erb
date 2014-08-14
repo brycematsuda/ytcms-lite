@@ -7,7 +7,7 @@
   <div class="episode-video">
     <p> <%= raw(sanitize(episode.embed_code, :tags => ['iframe', 'a'])) %></p>
   </div>
-  <div class="episode-description">
+  <div class="episode-description embed-responsive-item">
     <p><strong>Description:</strong></p>
     <p style="white-space:pre-wrap;"><%= episode.description %></p>
   </div>
