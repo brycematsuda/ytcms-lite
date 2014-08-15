@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811054724) do
+ActiveRecord::Schema.define(version: 20140815062218) do
 
   create_table "admins", force: true do |t|
     t.string   "email",           limit: 100, default: "", null: false
@@ -46,10 +46,11 @@ ActiveRecord::Schema.define(version: 20140811054724) do
     t.integer  "show_id"
     t.string   "permalink"
     t.integer  "position"
-    t.boolean  "visible",    default: false
+    t.boolean  "visible",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "description"
   end
 
   add_index "seasons", ["permalink"], name: "index_seasons_on_permalink"

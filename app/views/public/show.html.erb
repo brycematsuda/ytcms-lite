@@ -1,5 +1,6 @@
 <% @page_title = @season.show.name + " - " + @season.name %>
 <h2 id="season-header"><%= @season.show.name %> - <%= @season.name %></h2>
+  <p style="text-align: center"><%= @season.description || "" %>
  <hr />
 <% @season.episodes.visible.sorted.each do |episode| %>
 <div class="episode">

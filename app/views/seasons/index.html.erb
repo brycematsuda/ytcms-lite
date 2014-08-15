@@ -11,6 +11,7 @@
       <th>#</th>
       <th>Name</th>
       <th>Permalink</th>
+      <th>Description</th>
       <th>Visible</th>
       <th>Options</th>
     </tr>
@@ -22,6 +23,7 @@
         <td><%= season.position %></td>
         <td><%= truncate(season.name, length: 45) %></td>
         <td><%= truncate(season.permalink, length: 20) %></td>
+        <td><%= truncate(season.description, length: 20) %></td>
         <td><%= season.visible ? "Yes" : "No" %></td>
         <td>
         <div class="btn-group">

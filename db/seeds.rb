@@ -12,7 +12,7 @@ admin = Admin.create(:email => 'admin@example.com', :password => 'password')
 
 # WinDEU Hates You
 windeu = Show.create(:name => 'WinDEU Hates You', :position => 1, :visible => 'true')
-iroot = Season.create(:name => 'I Ran Out of Titles', :visible => 'true', :show_id => 1, :position => 1, :permalink => 'iroot')
+iroot = Season.create(:name => 'I Ran Out of Titles', :visible => 'true', :show_id => 1, :position => 1, :permalink => 'iroot', :description => "Sixth(?) edition of WinDEU Hates You series. Aenean aliquet tortor id sem pretium sollicitudin. Maecenas diam dui, lobortis rutrum laoreet nec, pharetra vel dolor. Integer et orci felis. Suspendisse hendrerit lacus eu leo viverra, sed dictum sapien blandit.")
 lovesu = Season.create(:name =>'Loves You: The Redemption', :visible => 'true', :show_id => 1, :position => 2, :permalink => 'lovesu')
 jkitneverends = Season.create(:name =>'Just Kidding, It Never Ends', :visible => 'true', :show_id => 1, :position => 3, :permalink => 'jkitneverends')
 

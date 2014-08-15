@@ -12,7 +12,8 @@ class SeasonsControllerTest < ActionController::TestCase
       :show_id => @show.id,
       :position => 1,
       :visible => true,
-      :permalink => "seasonupdate"
+      :permalink => "seasonupdate",
+      :description => "Update this season!"
     }
   end
 

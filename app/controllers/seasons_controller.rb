@@ -70,7 +70,7 @@ class SeasonsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def season_params
-      params.require(:season).permit(:show_id, :name, :position, :permalink, :visible)
+      params.require(:season).permit(:show_id, :name, :position, :permalink, :description, :visible)
     end
 
     def find_show

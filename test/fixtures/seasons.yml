@@ -6,6 +6,7 @@ one:
   position: 1
   visible: true
   permalink: "season12345"
+  description: "A Test Season"
 
 not_unique:
   name: "A Season Without A Unique Permalink"
