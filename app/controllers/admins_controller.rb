@@ -42,7 +42,12 @@ class AdminsController < ApplicationController
   end
 
   def delete
-    @admin = Admin.find(params[:id])
+    if Admin.count == 1
+      flash[:notice] = "Must have at least one admin available"
+      redirect_to(:action => 'index')
+    else
+      @admin = Admin.find(params[:id])
+    end
   end
 
   # DELETE /admins/1
