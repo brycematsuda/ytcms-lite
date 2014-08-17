@@ -19,7 +19,7 @@
 
   <tbody>
     <% @seasons.each do |season| %>
-      <tr>
+      <tr class=<%= season.visible ? "alive" : "dead" %>>
         <td><%= season.position %></td>
         <td><%= truncate(season.name, length: 45) %></td>
         <td><%= truncate(season.permalink, length: 20) %></td>

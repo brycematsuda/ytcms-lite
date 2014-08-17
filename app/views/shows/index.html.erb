@@ -16,7 +16,7 @@
 
   <tbody>
     <% @shows.each do |show| %>
-      <tr>
+      <tr class=<%= show.visible ? "alive" : "dead" %>>
         <td><%= show.position %></td>
         <td><%= show.name %></td>
         <td><%= show.visible ? "Yes" : "No" %></td>

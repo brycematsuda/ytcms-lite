@@ -18,7 +18,7 @@
 
   <tbody>
     <% @episodes.each do |episode| %>
-      <tr>
+      <tr class=<%= episode.visible ? "alive" : "dead" %>>
         <td><%= episode.position %></td>
         <td><%= episode.name %></td>
         <td><%= episode.visible ? "Yes" : "No" %></td>

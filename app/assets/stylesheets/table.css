@@ -28,3 +28,11 @@ form#new.button_to {
 table.table tbody tr td {
   position: relative;
 }
+
+tr.alive {
+  background: #B2F0B2;
+}
+
+tr.dead {
+  background: #F0B2B2;
+}
